@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected Menu"
+
+        android:textAlignment="gravity"
+        android:textSize="40sp"
+        android:id="@+id/text_selec"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="카드"
+        android:id="@+id/btn_card"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_3.6"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현금"
+        android:id="@+id/btn_cash"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_3.6"
+        android:layout_toLeftOf="@+id/btn_card"
+        android:layout_toRightOf="@+id/btn_2.6"
+        android:layout_toEndOf="@+id/btn_2.6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="메뉴선택"
+        android:id="@+id/text_menu"
+        android:textSize="40sp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/btn_card"
+        android:layout_toStartOf="@+id/btn_card"
+        android:layout_marginRight="115dp"
+        android:layout_marginEnd="115dp"
+        android:singleLine="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아메리카노"
+        android:id="@+id/btn_1_1"
+        android:textSize="40sp"
+        android:layout_alignTop="@+id/btn_2.1"
+        android:layout_toLeftOf="@+id/btn_2.1"
+        android:layout_toStartOf="@+id/btn_2.1"
+        android:onClick="onClick"
+        android:nestedScrollingEnabled="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="파운드케잌"
+        android:id="@+id/btn_3.2"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_2.1"
+        android:layout_toRightOf="@+id/btn_2.1"
+        android:layout_alignRight="@+id/btn_3.1"
+        android:layout_alignEnd="@+id/btn_3.1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="특제대추차"
+        android:id="@+id/btn_2.1"
+        android:textSize="40sp"
+        android:layout_below="@+id/text_menu"
+        android:layout_alignRight="@+id/text_menu"
+        android:layout_alignEnd="@+id/text_menu" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="쉬폰케이크"
+        android:id="@+id/btn_3.1"
+        android:textSize="40sp"
+        android:layout_below="@+id/text_menu"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/btn_2.1"
+        android:layout_toEndOf="@+id/btn_2.1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오디차"
+        android:id="@+id/btn_2.2"
+        android:textSize="40sp"
+        android:layout_alignTop="@+id/btn_3.2"
+        android:layout_toLeftOf="@+id/btn_3.2"
+        android:layout_alignLeft="@+id/btn_2.1"
+        android:layout_alignStart="@+id/btn_2.1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오미자차"
+        android:id="@+id/btn_2.3"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_2.2"
+        android:layout_toLeftOf="@+id/btn_3.2"
+        android:layout_alignLeft="@+id/btn_2.2"
+        android:layout_alignStart="@+id/btn_2.2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="쿠키"
+        android:id="@+id/btn_3.3"
+        android:textSize="40sp"
+        android:layout_alignTop="@+id/btn_2.3"
+        android:layout_alignRight="@+id/btn_3.2"
+        android:layout_alignEnd="@+id/btn_3.2"
+        android:layout_toRightOf="@+id/btn_2.3"
+        android:layout_toEndOf="@+id/btn_2.3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/btn_3.4"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_3.3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/btn_2.3"
+        android:layout_toEndOf="@+id/btn_2.3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="유자차"
+        android:id="@+id/btn_2.4"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_2.3"
+        android:layout_toLeftOf="@+id/btn_3.4"
+        android:layout_alignLeft="@+id/btn_2.3"
+        android:layout_alignStart="@+id/btn_2.3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="용궁라떼"
+        android:id="@+id/btn_1_2"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_1_1"
+        android:layout_toLeftOf="@+id/btn_2.1"
+        android:layout_alignLeft="@+id/btn_1_1"
+        android:layout_alignStart="@+id/btn_1_1"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="마끼아또"
+        android:id="@+id/btn_1_3"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_1_2"
+        android:layout_toLeftOf="@+id/btn_2.1"
+        android:layout_alignLeft="@+id/btn_1_2"
+        android:layout_alignStart="@+id/btn_1_2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="용푸치노"
+        android:id="@+id/btn_1_4"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_1_3"
+        android:layout_toLeftOf="@+id/btn_2.1"
+        android:layout_alignLeft="@+id/btn_1_3"
+        android:layout_alignStart="@+id/btn_1_3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="고구마라떼"
+        android:id="@+id/btn_1_5"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_2.4"
+        android:layout_alignLeft="@+id/btn_1_4"
+        android:layout_alignStart="@+id/btn_1_4"
+        android:layout_alignRight="@+id/btn_1_6"
+        android:layout_alignEnd="@+id/btn_1_6" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/btn_3.5"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_3.4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/btn_2.5"
+        android:layout_toEndOf="@+id/btn_2.5" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="모과차"
+        android:id="@+id/btn_2.5"
+        android:textSize="40sp"
+        android:layout_alignTop="@+id/btn_3.5"
+        android:layout_toLeftOf="@+id/btn_3.4"
+        android:layout_alignLeft="@+id/btn_2.4"
+        android:layout_alignStart="@+id/btn_2.4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아포가토"
+        android:id="@+id/btn_1_6"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_2.5"
+        android:layout_alignLeft="@+id/btn_1_4"
+        android:layout_toLeftOf="@+id/btn_2.4"
+        android:layout_toStartOf="@+id/btn_2.4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="블루베리"
+        android:id="@+id/btn_2.6"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_2.5"
+        android:layout_alignRight="@+id/btn_2.5"
+        android:layout_alignEnd="@+id/btn_2.5"
+        android:layout_alignLeft="@+id/btn_2.5"
+        android:layout_alignStart="@+id/btn_2.5" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회룡포부적"
+        android:id="@+id/btn_3.6"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_3.5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/btn_2.5"
+        android:layout_toEndOf="@+id/btn_2.5" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listview1"
+        android:layout_below="@+id/text_selec"
+        android:layout_toLeftOf="@+id/btn_1_1"
+        android:choiceMode="none"
+        android:layout_above="@+id/btn_1_6"
+        android:fastScrollEnabled="false"
+        android:fastScrollAlwaysVisible="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scrollIndicators="right" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="총계"
+        android:textAlignment="gravity"
+        android:textSize="50dp"
+        android:id="@+id/text_total_m"
+        android:layout_above="@+id/text_rsv_m"
+        android:layout_alignLeft="@+id/text_selec"
+        android:layout_alignStart="@+id/text_selec" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="취소"
+        android:id="@+id/btn_cancel"
+        android:textSize="40sp"
+        android:layout_alignBaseline="@+id/btn_cfm"
+        android:layout_alignBottom="@+id/btn_cfm"
+        android:layout_toRightOf="@+id/text_menu"
+        android:layout_toEndOf="@+id/text_menu" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인"
+        android:id="@+id/btn_cfm"
+        android:textSize="40sp"
+        android:layout_alignTop="@+id/text_rtn_m"
+        android:layout_toRightOf="@+id/btn_2.6"
+        android:layout_toEndOf="@+id/btn_2.6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="받은돈"
+        android:textAlignment="gravity"
+        android:textSize="50dp"
+        android:id="@+id/text_rsv_m"
+        android:layout_alignBottom="@+id/btn_cash"
+        android:layout_alignLeft="@+id/text_total_m"
+        android:layout_alignStart="@+id/text_total_m" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="거스름돈"
+        android:textAlignment="gravity"
+        android:textSize="50dp"
+        android:id="@+id/text_rtn_m"
+        android:layout_below="@+id/text_rsv_m"
+        android:layout_alignLeft="@+id/text_rsv_m"
+        android:layout_alignStart="@+id/text_rsv_m" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/show_ttl_m"
+        android:enabled="false"
+        android:inputType=""
+        android:numeric="integer"
+        android:layout_alignBottom="@+id/text_rsv_m"
+        android:layout_below="@+id/text_rsv_m"
+        android:layout_alignRight="@+id/listview1"
+        android:layout_alignEnd="@+id/listview1" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ICE"
+        android:id="@+id/btn_ice"
+        android:textSize="60sp"
+        android:layout_alignLeft="@+id/btn_1_6"
+        android:layout_alignStart="@+id/btn_1_6"
+        android:layout_alignTop="@+id/text_rsv_m" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12000"
+        android:textAlignment="gravity"
+        android:textSize="45dp"
+        android:id="@+id/m_total"
+        android:layout_above="@+id/m_rev"
+        android:layout_toRightOf="@+id/text_rtn_m"
+        android:layout_toEndOf="@+id/text_rtn_m" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/m_rev"
+        android:editable="true"
+        android:layout_alignRight="@+id/m_total"
+        android:layout_alignEnd="@+id/m_total"
+        android:layout_toEndOf="@+id/text_rtn_m"
+        android:layout_toRightOf="@+id/text_rtn_m"
+        android:numeric="integer"
+        android:inputType="number"
+        android:text="0"
+        android:maxLength="7"
+        android:textSize="45dp"
+        android:layout_below="@+id/btn_1_6"
+        android:layout_alignBottom="@+id/show_ttl_m" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12000"
+        android:textAlignment="gravity"
+        android:textSize="45dp"
+        android:id="@+id/m_return"
+        android:layout_toRightOf="@+id/text_rtn_m"
+        android:layout_toEndOf="@+id/text_rtn_m"
+        android:layout_alignBottom="@+id/btn_cfm"
+        android:layout_below="@+id/show_ttl_m" />
+
+</RelativeLayout>
