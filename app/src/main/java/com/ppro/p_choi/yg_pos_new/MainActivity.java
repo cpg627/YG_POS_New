@@ -1,7 +1,6 @@
 package com.ppro.p_choi.yg_pos_new;
 
-import android.app.Activity;
-import android.app.ListActivity;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,17 +8,15 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btn_1_1, btn_1_2, btn_1_3, btn_1_4, btn_1_5, btn_1_6;
+    Button btn_cancel;
     EditText m_rev;//총계
     TextView m_total, m_return;//받은돈, 거스름돈
     Integer m_rev_int, m_total_int, m_return_int;
@@ -38,34 +35,16 @@ public class MainActivity extends AppCompatActivity {
         btn_1_4=(Button)findViewById(R.id.btn_1_4);
         btn_1_5=(Button)findViewById(R.id.btn_1_5);
         btn_1_6=(Button)findViewById(R.id.btn_1_6);
-
+        //취소시 금액 리셋
+        btn_cancel=(Button)findViewById(R.id.btn_cancel);
         //받은돈 입력창
         m_rev = (EditText) findViewById(R.id.m_rev);
-        //숫자가 아닌것이 들어올 경우를 대비
-        if(m_rev.getText().toString().equals(null)) {
-            m_rev_int = 0;
-        }
-        else
-        {
-            m_rev_int = Integer.parseInt(m_rev.getText().toString());
-        }
-
-        //받은돈에 맞춰 거스름돈 계산
-        m_total = (TextView)findViewById(R.id.m_total);//총계
-        m_return = (TextView)findViewById(R.id.m_return);//거스름돈
-        m_total_int = Integer.parseInt(m_total.getText().toString());
-        m_return_int = m_rev_int - m_total_int;//받은돈-총계
-        //돈을 받기전은 무조건0으로 표시
-        if(m_return_int <= 0){
-            m_return_int=0;
-        }
 
         //어댑터 생성
         m_adapter = new ListViewAdapter();
         //리스트뷰 생성
         listView1 = (ListView)findViewById(R.id.listview1);
         //리스트에 어댑터 추가** 에러가 발생하는 부분
-        listView1.setAdapter(m_adapter);
         listView1.setBackgroundColor(Color.GRAY);//배경색 바꾸기
         listView1.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
@@ -78,12 +57,36 @@ public class MainActivity extends AppCompatActivity {
 
                 String titleStr = item.getTitle();
                 String descStr = item.getDesc();
-                Drawable iconDrawble = item.getIcon();
+                String iconDrawble = item.getIcon();
             }
         });//헷갈리기 쉬운부분
-        m_adapter.addItem(ContextCompat.getDrawable(this, R.mipmap.ic_launcher),"Box","Account box Black");
+
+
         Button.OnClickListener listener = new Button.OnClickListener(){
             public void onClick(View v){
+                //숫자가 아닌것이 들어올 경우를 대비
+                System.out.println(m_rev.toString());
+                if(m_rev.getText().toString().equals(null)) {
+                    m_rev_int = 0;
+                    System.out.println("최초 금액 0");
+                }
+                else
+                {
+                    m_rev_int = Integer.parseInt(m_rev.getText().toString());
+                    System.out.println("최초 금액 0아님");
+                }
+
+                //받은돈에 맞춰 거스름돈 계산
+                m_total = (TextView)findViewById(R.id.m_total);//총계
+                m_return = (TextView)findViewById(R.id.m_return);//거스름돈
+                m_total_int = Integer.parseInt(m_total.getText().toString());
+                m_return_int = m_rev_int - m_total_int;//받은돈-총계
+                //돈을 받기전은 무조건0으로 표시
+                if(m_return_int <= 0){
+                    m_return_int=0;
+                }
+                Resources res = getResources();
+
                 switch (v.getId()){
                     case R.id.btn_1_1:
                         System.out.println("1_1 눌림");
@@ -91,36 +94,50 @@ public class MainActivity extends AppCompatActivity {
                         //m_adapter.addItem(ContextCompat.getDrawable(this, R.mipmap.ic_launcher),"Box","Account box Black");
                         //총계금액에 추가
                         m_total_int += getPrice(v.getId());
+                        //리스트에 표시
+
+                        m_adapter.addItem("1_1","2,000","Americano");
                         break;
                     case R.id.btn_1_2:
                         System.out.println("1_2 눌림");
                         //ListView에 Item추가
 //                        m_adapter.add("2000");
                         m_total_int += getPrice(v.getId());
+                        m_adapter.addItem("1_2","3,000","Americano2");
                         break;
                     case R.id.btn_1_3:
                         System.out.println("1_3 눌림");
                         //ListView에 Item추가
 //                        m_adapter.add("3000");
                         m_total_int += getPrice(v.getId());
+                        m_adapter.addItem("1_4","4,000","Americano3");
                         break;
                     case R.id.btn_1_4:
                         System.out.println("1_4 눌림");
                         //ListView에 Item추가
                         //                       m_adapter.add("4000");
                         m_total_int += getPrice(v.getId());
+                        m_adapter.addItem("1_5","5,000","Americano4");
                         break;
                     case R.id.btn_1_5:
                         System.out.println("1_5 눌림");
                         //ListView에 Item추가
                         //                       m_adapter.add("5000");
                         m_total_int += getPrice(v.getId());
+                        m_adapter.addItem("1_6","6,000","Americano5");
                         break;
                     case R.id.btn_1_6:
                         System.out.println("1_6 눌림");
                         //ListView에 Item추가
 //                        m_adapter.add("6000");
                         m_total_int += getPrice(v.getId());
+                        m_adapter.addItem("1_7","7,000","Americano6");
+                        break;
+
+                    case R.id.btn_cancel://취소 버튼
+                        m_total_int = 0;
+                        m_rev_int = 0;
+                        m_return_int = 0;
                         break;
                 }
                 //총계 금액 업데이트
@@ -138,6 +155,10 @@ public class MainActivity extends AppCompatActivity {
         btn_1_4.setOnClickListener(listener);
         btn_1_5.setOnClickListener(listener);
         btn_1_6.setOnClickListener(listener);
+
+        btn_cancel.setOnClickListener(listener);
+        //리스트뷰 리스너 지정
+        listView1.setAdapter(m_adapter);
 
     }
 
