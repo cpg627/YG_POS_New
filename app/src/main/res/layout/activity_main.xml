@@ -24,10 +24,9 @@
         android:text="현금"
         android:id="@+id/btn_cash"
         android:textSize="40sp"
-        android:layout_below="@+id/btn_3.6"
-        android:layout_toLeftOf="@+id/btn_card"
-        android:layout_toRightOf="@+id/btn_2.6"
-        android:layout_toEndOf="@+id/btn_2.6" />
+        android:layout_below="@+id/btn_1_6"
+        android:layout_toLeftOf="@+id/text_menu"
+        android:layout_toStartOf="@+id/text_menu" />
 
     <TextView
         android:layout_width="wrap_content"
