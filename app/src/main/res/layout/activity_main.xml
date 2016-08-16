@@ -8,18 +8,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selected Menu"
-
-        android:textAlignment="gravity"
-        android:textSize="40sp"
-        android:id="@+id/text_selec"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -265,7 +253,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listview1"
-        android:layout_below="@+id/text_selec"
         android:layout_toLeftOf="@+id/btn_1_1"
         android:choiceMode="none"
         android:fastScrollEnabled="false"
@@ -275,40 +262,9 @@
         android:scrollIndicators="right"
         android:layout_above="@+id/btn_1_5" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="취소"
-        android:id="@+id/btn_cancel"
-        android:textSize="40sp"
-        android:layout_alignBaseline="@+id/btn_cfm"
-        android:layout_alignBottom="@+id/btn_cfm"
-        android:layout_toRightOf="@+id/text_menu"
-        android:layout_toEndOf="@+id/text_menu" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="확인"
-        android:id="@+id/btn_cfm"
-        android:textSize="40sp"
-        android:layout_toRightOf="@+id/btn_2.6"
-        android:layout_toEndOf="@+id/btn_2.6" />
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ICE"
-        android:id="@+id/btn_ice"
-        android:textSize="60sp"
-        android:layout_alignLeft="@+id/btn_1_6"
-        android:layout_alignStart="@+id/btn_1_6" />
-
-
 
     <TableLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/bright_foreground_inverse_material_dark"
         android:layout_below="@+id/listview1"
@@ -319,9 +275,7 @@
         android:layout_alignParentRight="false"
         android:layout_alignWithParentIfMissing="false"
         style="@style/Base.DialogWindowTitleBackground.AppCompat"
-        android:id="@+id/tableLayout"
-        android:layout_toEndOf="@+id/text_selec"
-        android:layout_toRightOf="@+id/text_selec">
+        android:id="@+id/tableLayout">
 
         //TableRow내의 번호버튼 생성하기
         <TableRow>
@@ -339,7 +293,8 @@
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:id="@+id/btn_0" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="만"
@@ -353,7 +308,8 @@
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:id="@+id/btn_1" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2"
@@ -394,14 +350,19 @@
     </TableLayout>
 
     <TableLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="@color/abc_search_url_text_selected"
         android:layout_below="@+id/btn_1_4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/text_selec"
-        android:layout_alignEnd="@+id/text_selec">
+        android:layout_alignParentEnd="false"
+        android:baselineAligned="false"
+        android:clickable="false"
+        android:contextClickable="false"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp">
 
         <TableRow>
             <TextView
@@ -417,8 +378,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="12000"
+                android:textAlignment="gravity"
+                android:textSize="30dp"
                 android:id="@+id/m_rev"
-                android:background="@color/background_floating_material_light" />
+                android:background="@color/background_floating_material_light"
+                android:layout_column="1" />
+
         </TableRow>
 
         <TableRow>
@@ -436,7 +402,7 @@
                 android:layout_height="wrap_content"
                 android:text="12000"
                 android:textAlignment="gravity"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:id="@+id/m_total"
                 android:background="@color/background_floating_material_light" />
         </TableRow>
@@ -463,5 +429,34 @@
 
 
     </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ICE"
+        android:id="@+id/button2"
+        android:textSize="60sp"
+        android:layout_below="@+id/btn_cash"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인"
+        android:id="@+id/button"
+        android:textSize="40sp"
+        android:layout_below="@+id/btn_cash"
+        android:layout_toRightOf="@+id/btn_1_6"
+        android:layout_toEndOf="@+id/btn_1_6" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="취소"
+        android:id="@+id/button4"
+        android:textSize="40sp"
+        android:layout_alignBottom="@+id/button"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button" />
 
 </RelativeLayout>
