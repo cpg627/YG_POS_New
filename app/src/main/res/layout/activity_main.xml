@@ -24,9 +24,9 @@
         android:text="현금"
         android:id="@+id/btn_cash"
         android:textSize="40sp"
-        android:layout_below="@+id/btn_1_6"
-        android:layout_toLeftOf="@+id/text_menu"
-        android:layout_toStartOf="@+id/text_menu" />
+        android:layout_alignTop="@+id/btn_card"
+        android:layout_toRightOf="@+id/btn_2.6"
+        android:layout_toEndOf="@+id/btn_2.6" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -292,59 +292,91 @@
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textSize="30dp"
-                android:id="@+id/btn_0" />
+                android:textSize="40dp"
+                android:id="@+id/btn_0"
+                android:onClick="InsertClick" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="만"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_man" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="C"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_c"
+                android:onClick="InsertClick" />
         </TableRow>
         <TableRow>
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1"
-                android:textSize="30dp"
-                android:id="@+id/btn_1" />
+                android:textSize="40dp"
+                android:id="@+id/btn_1"
+                android:onClick="InsertClick" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_2" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_3"
+                android:onClick="InsertClick" />
         </TableRow>
         <TableRow>
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_4"
+                android:onClick="InsertClick" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_5"
+                android:onClick="InsertClick" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_6"
+                android:onClick="InsertClick" />
         </TableRow>
         <TableRow>
             <Button android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="7"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_7"
+                android:onClick="InsertClick" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_8"
+                android:onClick="InsertClick" />
             <Button android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9"
-                android:textSize="30dp" />
+                android:textSize="40dp"
+                android:id="@+id/btn_9"
+                android:onClick="InsertClick" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="┙"
+                android:textSize="30dp"
+                android:id="@+id/btn_enter"
+                android:layout_column="2"
+                android:onClick="InsertClick" />
         </TableRow>
     </TableLayout>
 
@@ -408,22 +440,44 @@
 
 
         <TableRow>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="거스름돈"
                 android:textAlignment="gravity"
                 android:textSize="30dp"
                 android:id="@+id/textView4"
-                android:textColor="@color/background_floating_material_light" />
+                android:textColor="@color/background_floating_material_light"
+                android:layout_column="0" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="12000"
                 android:textAlignment="gravity"
                 android:textSize="30dp"
                 android:id="@+id/m_return"
-                android:background="@color/background_floating_material_light" />
+                android:background="@color/background_floating_material_light"
+                android:layout_column="1" />
         </TableRow>
 
 
@@ -434,9 +488,10 @@
         android:layout_height="wrap_content"
         android:text="ICE"
         android:id="@+id/button2"
-        android:textSize="60sp"
-        android:layout_below="@+id/btn_cash"
-        android:layout_centerHorizontal="true" />
+        android:textSize="100dp"
+        android:layout_alignTop="@+id/button"
+        android:layout_toRightOf="@+id/tableLayout"
+        android:layout_toEndOf="@+id/tableLayout" />
 
     <Button
         android:layout_width="wrap_content"
@@ -452,7 +507,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="취소"
-        android:id="@+id/button4"
+        android:id="@+id/btn_cancel"
         android:textSize="40sp"
         android:layout_alignBottom="@+id/button"
         android:layout_toRightOf="@+id/button"

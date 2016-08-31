@@ -13,11 +13,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btn_1_1, btn_1_2, btn_1_3, btn_1_4, btn_1_5, btn_1_6;
+    Button btn_0, btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_man, btn_enter, btn_c;
     Button btn_cancel;
-    EditText m_rev;//총계
+    TextView m_rev;//총계
     TextView m_total, m_return;//받은돈, 거스름돈
     Integer m_rev_int, m_total_int, m_return_int;
     ListView listView1;
@@ -27,6 +30,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //받은돈 입력 버튼에 리스너 장착
+        btn_c=(Button)findViewById(R.id.btn_c);
+        btn_0=(Button)findViewById(R.id.btn_0);
+        btn_1=(Button)findViewById(R.id.btn_1);
+        btn_2=(Button)findViewById(R.id.btn_2);
+        btn_3=(Button)findViewById(R.id.btn_3);
+        btn_4=(Button)findViewById(R.id.btn_4);
+        btn_5=(Button)findViewById(R.id.btn_5);
+        btn_6=(Button)findViewById(R.id.btn_6);
+        btn_7=(Button)findViewById(R.id.btn_7);
+        btn_8=(Button)findViewById(R.id.btn_8);
+        btn_9=(Button)findViewById(R.id.btn_9);
+        btn_man=(Button)findViewById(R.id.btn_man);
+        btn_enter=(Button)findViewById(R.id.btn_enter);
+
 
         //버튼에 리스너 달기
         btn_1_1=(Button)findViewById(R.id.btn_1_1);
@@ -38,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         //취소시 금액 리셋
         btn_cancel=(Button)findViewById(R.id.btn_cancel);
         //받은돈 입력창
-        m_rev = (EditText) findViewById(R.id.m_rev);
+        m_rev = (TextView) findViewById(R.id.m_rev);
 
         //어댑터 생성
         m_adapter = new ListViewAdapter();
@@ -63,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button.OnClickListener listener = new Button.OnClickListener(){
+            //받은돈 입력창용 버튼패드
+            public void InsertClick(View v) {
+                System.out.print("버튼 눌러짐 ");
+            }
+
+            //메뉴 입력창용 버튼패드
             public void onClick(View v){
                 //숫자가 아닌것이 들어올 경우를 대비
                 System.out.println(m_rev.toString());
@@ -149,6 +173,28 @@ public class MainActivity extends AppCompatActivity {
                 m_return.setText(m_return_int.toString());
             }
         };//이부분에서 세미콜론;을 찍는것을잊어서는안된다
+        Button.OnClickListener listener1 = new Button.OnClickListener() {
+            //받은돈 입력창용 버튼패드
+            public void InsertClick(View v) {
+                System.out.print("버튼 눌러짐 ");
+            }
+        }
+            //받는돈 setListener
+        btn_0.setOnClickListener(listener1);
+        btn_1.setOnClickListener(listener1);
+        btn_2.setOnClickListener(listener1);
+        btn_3.setOnClickListener(listener1);
+        btn_4.setOnClickListener(listener1);
+        btn_5.setOnClickListener(listener1);
+        btn_6.setOnClickListener(listener1);
+        btn_7.setOnClickListener(listener1);
+        btn_8.setOnClickListener(listener1);
+        btn_9.setOnClickListener(listener1);
+        btn_c.setOnClickListener(listener1);
+        btn_man.setOnClickListener(listener1);
+        btn_enter.setOnClickListener(listener1);
+
+
         btn_1_1.setOnClickListener(listener);
         btn_1_2.setOnClickListener(listener);
         btn_1_3.setOnClickListener(listener);
